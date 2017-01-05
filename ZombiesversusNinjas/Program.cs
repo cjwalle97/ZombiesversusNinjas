@@ -15,14 +15,45 @@ namespace ZombiesversusNinjas
             private string Name;
             protected int health;
             protected int attack;
-            Entity() { }
-            Entity(int h, int att)
+            public Entity() { }
+            public Entity(int h, int a)
             {
                 Health = h;
-                Attack = att;
+                Attack = a;
             }
-            public virtual bool ATTACK(Entity);
+            public virtual bool ATTACK(Entity)
+            {
+                return false;
+            }
         }
+        class Zombie : Entity
+            {
+            Zombie() { }
+            Zombie(int h, int a)
+            {
+                health = h;
+                attack = a;
+                }
+        }
+
+        class Player : Entity
+        {
+            Player() { }
+            Player(int h, int a)
+            {
+                health = h;
+                attack = a;
+            }
+            public override bool ATTACK(Entity )
+            {
+                return base.ATTACK();
+            }
+            public bool Defend()
+            {
+
+            }
+        }
+
         static void Main(string[] args)
         {
         }
